@@ -34,7 +34,7 @@ export default function Header() {
                 <Nav.Link className="mx-2" as={Link} to="/manageallorder">
                   Manage All Order
                 </Nav.Link>
-                <Nav.Link className="mx-2" as={Link} to="/addservice">
+                <Nav.Link className="mx-2" as={Link} to="/addcar">
                   Add New Service
                 </Nav.Link>
               </>

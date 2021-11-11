@@ -17,11 +17,12 @@ export default function Register() {
   const history = useHistory();
 
   // Form Control
-  const handleOnchange = (e) => {
+  const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
     const newLoginData = { ...logInData };
     newLoginData[field] = value;
+    console.log(newLoginData);
     setLogInData(newLoginData);
   };
   //  Register Function
@@ -32,7 +33,13 @@ export default function Register() {
       alert("Your passowrd Donot match");
       return;
     }
-    registerUser(logInData.email, logInData.password, location, history);
+    registerUser(
+      logInData.email,
+      logInData.password,
+      logInData.name,
+      location,
+      history
+    );
   };
   return (
     <div className="w-50 m-auto my-5">
@@ -41,7 +48,14 @@ export default function Register() {
       {!isloading && (
         <Form onSubmit={handleLogin}>
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingInputName"
+            label="Your Name"
+            className="mb-2"
+          >
+            <Form.Control type="text" name="name" onBlur={handleOnBlur} />
+          </FloatingLabel>
+          <FloatingLabel
+            controlId="floatingInputEmail"
             label="Email address"
             className="mb-2"
           >
@@ -49,7 +63,7 @@ export default function Register() {
               type="email"
               placeholder="name@example.com"
               name="email"
-              onChange={handleOnchange}
+              onBlur={handleOnBlur}
             />
           </FloatingLabel>
           <FloatingLabel
@@ -61,19 +75,19 @@ export default function Register() {
               type="password"
               placeholder="Password"
               name="password"
-              onChange={handleOnchange}
+              onBlur={handleOnBlur}
             />
           </FloatingLabel>
           <FloatingLabel
             className="mb-2"
-            controlId="floatingPassword"
+            controlId="floatingPassword2"
             label="Confirm Password"
           >
             <Form.Control
               type="password"
               placeholder="Password"
               name="password2"
-              onChange={handleOnchange}
+              onBlur={handleOnBlur}
             />
           </FloatingLabel>
           <Nav.Link className="mx-2" as={Link} to="/login">

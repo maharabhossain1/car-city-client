@@ -42,7 +42,7 @@ export default function Login() {
               type="email"
               placeholder="name@example.com"
               name="email"
-              onChange={handleOnchange}
+              onBlur={handleOnchange}
             />
           </FloatingLabel>
           <FloatingLabel controlId="floatingPassword" label="Password">
@@ -50,7 +50,7 @@ export default function Login() {
               type="password"
               placeholder="Password"
               name="password"
-              onChange={handleOnchange}
+              onBlur={handleOnchange}
             />
           </FloatingLabel>
           <Nav.Link className="mx-2" as={Link} to="/register">
