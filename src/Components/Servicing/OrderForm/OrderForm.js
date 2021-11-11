@@ -1,31 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { FloatingLabel, Form } from "react-bootstrap";
-import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 
-export default function OrderForm({ name }) {
-  console.log(name);
+export default function OrderForm({ title }) {
   const { user } = useAuth();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (order, e) => {
+  const basicInfo = {
+    name: user.displayName,
+    email: user.email,
+    carModel: "",
+    status: "Pending",
+    phone: "",
+  };
+  const [orderData, setOrderData] = useState(basicInfo);
+
+  const handleOnBlur = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    const newInfo = { ...orderData };
+    newInfo[field] = value;
+    setOrderData(newInfo);
+  };
+
+  const handleOnSubmit = (e) => {
     e.preventDefault();
-    fetch("https://protected-badlands-11098.herokuapp.com/orders", {
+    fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(order),
+      body: JSON.stringify(orderData),
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert("added succesfully");
+          alert("Dear User , Your Order added succesfully");
         }
         e.target.reset();
+        setOrderData(basicInfo);
       });
   };
 
@@ -38,40 +49,30 @@ export default function OrderForm({ name }) {
           submit and then go to the Home{" "}
         </h4>
       </div>
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleOnSubmit}>
         <FloatingLabel
           controlId="floatingInput"
-          label="User Email"
-          className="mb-3"
-        >
-          <Form.Control
-            type="email"
-            value={user.email || ""}
-            {...register("email")}
-          />
-        </FloatingLabel>
-        <FloatingLabel
-          controlId="floatingInput"
-          label="Status Code"
+          label="Car Model"
           className="mb-3"
         >
           <Form.Control
             type="text"
-            {...register("status")}
-            defaultValue="pending"
+            name="carModel"
+            onBlur={handleOnBlur}
+            defaultValue=""
           />
         </FloatingLabel>
         <FloatingLabel
-          controlId="floatingTextarea"
-          label="Please Coply Service Name"
+          controlId="floatingInput"
+          label="Phone Number"
           className="mb-3"
         >
           <Form.Control
-            as="textarea"
-            {...register("serviceName", { required: true })}
-            placeholder="Leave a comment here"
+            type="number"
+            name="phone"
+            onBlur={handleOnBlur}
+            defaultValue=""
           />
-          {errors.serviceName && <span>This field is required</span>}
         </FloatingLabel>
         <FloatingLabel
           controlId="floatingTextarea2"
@@ -80,10 +81,10 @@ export default function OrderForm({ name }) {
         >
           <Form.Control
             as="textarea"
+            onBlur={handleOnBlur}
+            name="address"
             style={{ height: "100px" }}
-            {...register("address", { required: true })}
           />
-          {errors.address && <span>This field is required</span>}
         </FloatingLabel>
         <Form.Control
           type="submit"

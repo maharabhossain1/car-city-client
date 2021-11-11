@@ -11,7 +11,7 @@ export default function Servicing() {
     fetch(`http://localhost:5000/cars/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setService(data));
-  }, []);
+  }, [serviceId]);
   return (
     <>
       <img className="img-fluid" src={service.imgbanner} alt="" />
@@ -41,7 +41,7 @@ export default function Servicing() {
           </Row>
         </Container>
       </div>
-      <OrderForm name={service.title} />
+      <OrderForm title={service.title} />
     </>
   );
 }

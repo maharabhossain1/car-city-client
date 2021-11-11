@@ -5,9 +5,12 @@ import Home from "./Components/Home/Home";
 import Login from "./Components/Loging/Login/Login";
 import PrivateRoute from "./Components/Loging/PrivateRoute/PrivateRoute";
 import Register from "./Components/Loging/Register/Register";
-import MyOrders from "./Components/MyOrders/MyOrders";
+import MyOrders from "./Components/AllCars/AllCars";
 import Servicing from "./Components/Servicing/Servicing/Servicing";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
+import AllCars from "./Components/AllCars/AllCars";
+import Footer from "./Components/Footer/Footer";
+import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 function App() {
   return (
     <div>
@@ -24,11 +27,14 @@ function App() {
             <Route path="/login">
               <Login />
             </Route>
-            <PrivateRoute path="/myorder">
-              <MyOrders />
-            </PrivateRoute>
+            <Route path="/allcars">
+              <AllCars />
+            </Route>
             <PrivateRoute path="/addcar">
               <AddService />
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+                <Dashboard/>
             </PrivateRoute>
             <PrivateRoute path="/servicing/:serviceId">
               <Servicing />
@@ -37,6 +43,7 @@ function App() {
               <Register />
             </Route>
           </Switch>
+          <Footer />
         </Router>
       </AuthProvider>
     </div>

@@ -26,6 +26,13 @@ export default function Header() {
             <Nav.Link className="mx-2" as={Link} to="/home">
               Home
             </Nav.Link>
+            <Nav.Link className="mx-2" as={Link} to="/allcars">
+              Explore
+            </Nav.Link>
+            <Nav.Link className="mx-2" as={Link} to="/dashboard">
+              Dashboard
+            </Nav.Link>
+
             {user?.email && (
               <>
                 <Nav.Link className="mx-2" as={Link} to="/myorder">
