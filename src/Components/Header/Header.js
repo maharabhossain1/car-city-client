@@ -4,9 +4,10 @@ import { FaUserTie } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { GiDeliveryDrone } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 export default function Header() {
-  //   const { user, logOut } = useAuth();
+  const { user, logOut } = useAuth();
   return (
     <Navbar
       className="my-nav"
@@ -25,10 +26,7 @@ export default function Header() {
             <Nav.Link className="mx-2" as={Link} to="/home">
               Home
             </Nav.Link>
-            <Nav.Link className="mx-2" as={Link} to="/login">
-              Login
-            </Nav.Link>
-            {/* {user?.email && (
+            {user?.email && (
               <>
                 <Nav.Link className="mx-2" as={Link} to="/myorder">
                   My Order
@@ -40,13 +38,13 @@ export default function Header() {
                   Add New Service
                 </Nav.Link>
               </>
-            )} */}
+            )}
 
-            {/* <Navbar.Text>
+            <Navbar.Text>
               <FaUserTie className="text-light fs-4" />
               <span className="mx-2 text-light">{user?.displayName}</span>
-            </Navbar.Text> */}
-            {/* {user?.email ? (
+            </Navbar.Text>
+            {user?.email ? (
               <Button className="mx-2" onClick={logOut} variant="light">
                 <FiLogOut /> Logout
               </Button>
@@ -54,7 +52,7 @@ export default function Header() {
               <Nav.Link className="mx-2" as={Link} to="/login">
                 Login
               </Nav.Link>
-            )} */}
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
