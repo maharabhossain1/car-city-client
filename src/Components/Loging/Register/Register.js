@@ -7,12 +7,16 @@ import {
   Spinner,
   Alert,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 export default function Register() {
   const [logInData, setLogInData] = useState({});
   const { registerUser, isloading, user, authError } = useAuth();
+  const location = useLocation();
+  const history = useHistory();
+
+  // Form Control
   const handleOnchange = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -20,7 +24,7 @@ export default function Register() {
     newLoginData[field] = value;
     setLogInData(newLoginData);
   };
-  console.log(logInData);
+  //  Register Function
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -28,7 +32,7 @@ export default function Register() {
       alert("Your passowrd Donot match");
       return;
     }
-    registerUser(logInData.email, logInData.password);
+    registerUser(logInData.email, logInData.password, location, history);
   };
   return (
     <div className="w-50 m-auto my-5">
