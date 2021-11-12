@@ -14,6 +14,7 @@ import DashboardHome from "../DashaboardHome/DashboardHome";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageAllOrder from "../ManageAllOrder/ManageAllOrder";
 import MyOrders from "../MyOrders/MyOrders";
+import Payment from "../Payment/Payment";
 import Review from "../Review/Review";
 
 export default function Dashboard() {
@@ -36,6 +37,11 @@ export default function Dashboard() {
           <Nav.Item>
             <Nav.Link className="" as={Link} to={`${url}/review`}>
               Reviews
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link className="" as={Link} to={`${url}/payment`}>
+              Payment
             </Nav.Link>
           </Nav.Item>
           {admin && (
@@ -74,6 +80,9 @@ export default function Dashboard() {
             </Route>
             <Route path={`${path}/review`}>
               <Review />
+            </Route>
+            <Route path={`${path}/payment`}>
+              <Payment />
             </Route>
             <PrivateRoute path={`${path}/addcar`}>
               <AddService />
