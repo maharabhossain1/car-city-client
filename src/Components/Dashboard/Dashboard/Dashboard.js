@@ -1,19 +1,19 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route,
   Link,
-  useParams,
   useRouteMatch,
 } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 import DashboardHome from "../DashaboardHome/DashboardHome";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 
 export default function Dashboard() {
   let { path, url } = useRouteMatch();
-
+  const { admin } = useAuth();
   return (
     <div>
       <div>
@@ -28,11 +28,13 @@ export default function Dashboard() {
               My Orders
             </Nav.Link>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Link className="" as={Link} to={`${url}/makeadmin`}>
-              Make Admin
-            </Nav.Link>
-          </Nav.Item>
+          {admin && (
+            <Nav.Item>
+              <Nav.Link className="" as={Link} to={`${url}/makeadmin`}>
+                Make Admin
+              </Nav.Link>
+            </Nav.Item>
+          )}
         </Nav>
         <div>
           <Switch>

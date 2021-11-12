@@ -22,7 +22,6 @@ export default function Register() {
     const value = e.target.value;
     const newLoginData = { ...logInData };
     newLoginData[field] = value;
-    console.log(newLoginData);
     setLogInData(newLoginData);
   };
   //  Register Function
