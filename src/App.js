@@ -1,11 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import AddService from "./Components/AddService/AddService";
+
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Loging/Login/Login";
 import PrivateRoute from "./Components/Loging/PrivateRoute/PrivateRoute";
 import Register from "./Components/Loging/Register/Register";
-import MyOrders from "./Components/AllCars/AllCars";
 import Servicing from "./Components/Servicing/Servicing/Servicing";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import AllCars from "./Components/AllCars/AllCars";
@@ -30,11 +29,8 @@ function App() {
             <Route path="/allcars">
               <AllCars />
             </Route>
-            <PrivateRoute path="/addcar">
-              <AddService />
-            </PrivateRoute>
             <PrivateRoute path="/dashboard">
-                <Dashboard/>
+              <Dashboard />
             </PrivateRoute>
             <PrivateRoute path="/servicing/:serviceId">
               <Servicing />

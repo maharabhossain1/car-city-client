@@ -10,15 +10,14 @@ export default function Header() {
   const { user, logOut } = useAuth();
   return (
     <Navbar
-      className="my-nav"
+      className="my-nav btn-custom-color"
       collapseOnSelect
       expand="lg"
-      bg="dark"
       variant="dark"
     >
       <Container>
         <Navbar.Brand as={Link} to="/">
-          <GiDeliveryDrone className="fs-1" /> Courier Sheba
+          <GiDeliveryDrone className="fs-1" /> Car City
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" className="">
@@ -29,20 +28,11 @@ export default function Header() {
             <Nav.Link className="mx-2" as={Link} to="/allcars">
               Explore
             </Nav.Link>
-            <Nav.Link className="mx-2" as={Link} to="/dashboard">
-              Dashboard
-            </Nav.Link>
 
             {user?.email && (
               <>
-                <Nav.Link className="mx-2" as={Link} to="/myorder">
-                  My Order
-                </Nav.Link>
-                <Nav.Link className="mx-2" as={Link} to="/manageallorder">
-                  Manage All Order
-                </Nav.Link>
-                <Nav.Link className="mx-2" as={Link} to="/addcar">
-                  Add New Service
+                <Nav.Link className="mx-2" as={Link} to="/dashboard">
+                  Dashboard
                 </Nav.Link>
               </>
             )}

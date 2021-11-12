@@ -36,7 +36,7 @@ export default function MyOrders() {
         <div>
           <img
             className="img-fluid"
-            src="https://i.ibb.co/7tb4hLn/8.jpg"
+            src="https://i.ibb.co/kDYyvZx/topbanner.webp"
             alt=""
           />
         </div>

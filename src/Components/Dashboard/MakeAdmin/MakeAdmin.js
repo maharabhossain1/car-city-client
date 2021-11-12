@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { FloatingLabel, Form, Button } from "react-bootstrap";
+import useAuth from "../../../hooks/useAuth";
 
 export default function MakeAdmin() {
   const [email, setEmail] = useState();
+  const { user } = useAuth();
 
   const handleOnBlur = (e) => {
     setEmail(e.target.value);
@@ -21,8 +23,15 @@ export default function MakeAdmin() {
     e.preventDefault();
   };
   return (
-    <div>
-      <div className="w-75 m-auto my-5">
+    <div className="border-custom-color w-75 m-auto my-4 p-2">
+      <div className="m-auto my-4 text-custom-color div-custom">
+        <h1> Hey Admin , {user.displayName}</h1>
+        <h4>
+          If You Want To make Any User Admin , Please Fill Up the Form By User
+          Email{" "}
+        </h4>
+      </div>
+      <div className="m-auto my-5">
         <Form onSubmit={handleAdminSubmit}>
           <FloatingLabel
             controlId="floatingInput"
@@ -35,7 +44,7 @@ export default function MakeAdmin() {
               placeholder="name@example.com"
             />
           </FloatingLabel>
-          <Button variant="primary" type="submit">
+          <Button className="btn-custom-color" type="submit">
             Make Admin
           </Button>
         </Form>

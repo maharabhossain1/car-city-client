@@ -45,8 +45,8 @@ export default function OrderForm({ title }) {
       <div className=" my-4">
         <h1>Hello {user?.displayName} </h1>
         <h4>
-          If you want to add new service , <br /> please fill up the form and
-          submit and then go to the Home{" "}
+          If you want to Order New Car, <br /> please fill up the form and
+          submit{" "}
         </h4>
       </div>
       <Form onSubmit={handleOnSubmit}>

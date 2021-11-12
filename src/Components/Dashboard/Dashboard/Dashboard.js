@@ -8,6 +8,8 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import AddService from "../../AddService/AddService";
+import PrivateRoute from "../../Loging/PrivateRoute/PrivateRoute";
 import DashboardHome from "../DashaboardHome/DashboardHome";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageAllOrder from "../ManageAllOrder/ManageAllOrder";
@@ -48,6 +50,11 @@ export default function Dashboard() {
                   Manage Orders
                 </Nav.Link>
               </Nav.Item>
+              <Nav.Item>
+                <Nav.Link className="" as={Link} to={`${url}/addcar`}>
+                  Add New Car
+                </Nav.Link>
+              </Nav.Item>
             </>
           )}
         </Nav>
@@ -68,6 +75,9 @@ export default function Dashboard() {
             <Route path={`${path}/review`}>
               <Review />
             </Route>
+            <PrivateRoute path={`${path}/addcar`}>
+              <AddService />
+            </PrivateRoute>
           </Switch>
         </div>
       </div>
