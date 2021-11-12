@@ -6,7 +6,7 @@ export default function Cart({ shebaMini }) {
   const { img, title, detail, _id } = shebaMini;
   return (
     <div className="my-2">
-      <Card className="m-auto" style={{ width: "18rem", height: "27.7rem" }}>
+      <Card className="m-auto" style={{ width: "26.5rem" }}>
         <div>
           <Card.Img variant="top" src={img} className="img-fluid " />
         </div>
@@ -16,7 +16,7 @@ export default function Cart({ shebaMini }) {
           <Link to={`/servicing/${_id}`}>
             <Button variant="primary" className="btn-custom-color">
               {" "}
-              Click for service
+              Click for Order
             </Button>
           </Link>
         </Card.Body>

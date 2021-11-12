@@ -90,7 +90,7 @@ const useFirebase = () => {
   // save user Data
   const saveUser = (email, displayName) => {
     const user = { email, displayName };
-    fetch("http://localhost:5000/users", {
+    fetch("https://powerful-meadow-94521.herokuapp.com/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -101,7 +101,7 @@ const useFirebase = () => {
 
   // Admin Data
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://powerful-meadow-94521.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);

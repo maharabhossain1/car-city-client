@@ -8,7 +8,7 @@ export default function Servicing() {
   const [service, setService] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/cars/${serviceId}`)
+    fetch(`https://powerful-meadow-94521.herokuapp.com/cars/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, [serviceId]);

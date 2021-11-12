@@ -42,7 +42,7 @@ export default function Register() {
   };
   return (
     <div className="w-50 m-auto my-5">
-      <h1> register</h1>
+      <h1>Welcome To Car City ,Please Register</h1>
       {isloading && <Spinner animation="border" />}
       {!isloading && (
         <Form onSubmit={handleLogin}>
@@ -93,8 +93,8 @@ export default function Register() {
             Already have an account ? please go to log in
           </Nav.Link>
 
-          <Button variant="primary" type="submit">
-            Login
+          <Button className="my-3 btn-custom-color text-light" type="submit">
+            Sign Up
           </Button>
         </Form>
       )}

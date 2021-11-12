@@ -7,9 +7,9 @@ import PrivateRoute from "./Components/Loging/PrivateRoute/PrivateRoute";
 import Register from "./Components/Loging/Register/Register";
 import Servicing from "./Components/Servicing/Servicing/Servicing";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
-import AllCars from "./Components/AllCars/AllCars";
 import Footer from "./Components/Footer/Footer";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+import Explore from "./Components/Explore/Explore";
 function App() {
   return (
     <div>
@@ -26,8 +26,8 @@ function App() {
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/allcars">
-              <AllCars />
+            <Route path="/explorecars">
+              <Explore />
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard />

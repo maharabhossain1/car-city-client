@@ -4,7 +4,7 @@ import { TiTick } from "react-icons/ti";
 export default function ManageAllOrder() {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/orders`)
+    fetch(`https://powerful-meadow-94521.herokuapp.com/orders`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   });
@@ -13,7 +13,7 @@ export default function ManageAllOrder() {
   const handleUserID = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/orders/delete/${id}`;
+      const url = `https://powerful-meadow-94521.herokuapp.com/orders/delete/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -30,7 +30,7 @@ export default function ManageAllOrder() {
   ///////update user order status
 
   const handleUpdateOrder = (id) => {
-    const url = `http://localhost:5000/orders/update/${id}`;
+    const url = `https://powerful-meadow-94521.herokuapp.com/orders/update/${id}`;
     const updateStatus = { status: "Confirm" };
     fetch(url, {
       method: "PUT",

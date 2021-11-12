@@ -23,7 +23,7 @@ export default function OrderForm({ title }) {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:5000/orders", {
+    fetch("https://powerful-meadow-94521.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

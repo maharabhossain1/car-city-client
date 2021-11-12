@@ -30,7 +30,7 @@ export default function Login() {
   };
   return (
     <div className="w-50 m-auto my-5">
-      <h1>this is log in</h1>
+      <h1>Welcome Back Please Login </h1>
       {!isloading && (
         <Form onSubmit={handleLogin}>
           <FloatingLabel
@@ -57,7 +57,7 @@ export default function Login() {
             New user please register
           </Nav.Link>
 
-          <Button variant="primary" type="submit">
+          <Button className="my-3 btn-custom-color text-light" type="submit">
             Login
           </Button>
         </Form>
