@@ -12,6 +12,7 @@ import DashboardHome from "../DashaboardHome/DashboardHome";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageAllOrder from "../ManageAllOrder/ManageAllOrder";
 import MyOrders from "../MyOrders/MyOrders";
+import Review from "../Review/Review";
 
 export default function Dashboard() {
   let { path, url } = useRouteMatch();
@@ -30,15 +31,24 @@ export default function Dashboard() {
               My Orders
             </Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link className="" as={Link} to={`${url}/review`}>
+              Reviews
+            </Nav.Link>
+          </Nav.Item>
           {admin && (
-            <Nav.Item>
-              <Nav.Link className="" as={Link} to={`${url}/makeadmin`}>
-                Make Admin
-              </Nav.Link>
-              <Nav.Link className="" as={Link} to={`${url}/manageorders`}>
-                Manage Orders
-              </Nav.Link>
-            </Nav.Item>
+            <>
+              <Nav.Item>
+                <Nav.Link className="" as={Link} to={`${url}/makeadmin`}>
+                  Make Admin
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link className="" as={Link} to={`${url}/manageorders`}>
+                  Manage Orders
+                </Nav.Link>
+              </Nav.Item>
+            </>
           )}
         </Nav>
         <div>
@@ -54,6 +64,9 @@ export default function Dashboard() {
             </Route>
             <Route path={`${path}/manageorders`}>
               <ManageAllOrder />
+            </Route>
+            <Route path={`${path}/review`}>
+              <Review />
             </Route>
           </Switch>
         </div>
