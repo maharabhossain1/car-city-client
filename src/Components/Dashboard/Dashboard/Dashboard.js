@@ -10,6 +10,8 @@ import {
 import useAuth from "../../../hooks/useAuth";
 import DashboardHome from "../DashaboardHome/DashboardHome";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
+import ManageAllOrder from "../ManageAllOrder/ManageAllOrder";
+import MyOrders from "../MyOrders/MyOrders";
 
 export default function Dashboard() {
   let { path, url } = useRouteMatch();
@@ -24,7 +26,7 @@ export default function Dashboard() {
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link className="" as={Link} to={`${url}/Myorders`}>
+            <Nav.Link className="" as={Link} to={`${url}/myorders`}>
               My Orders
             </Nav.Link>
           </Nav.Item>
@@ -32,6 +34,9 @@ export default function Dashboard() {
             <Nav.Item>
               <Nav.Link className="" as={Link} to={`${url}/makeadmin`}>
                 Make Admin
+              </Nav.Link>
+              <Nav.Link className="" as={Link} to={`${url}/manageorders`}>
+                Manage Orders
               </Nav.Link>
             </Nav.Item>
           )}
@@ -43,6 +48,12 @@ export default function Dashboard() {
             </Route>
             <Route path={`${path}/makeadmin`}>
               <MakeAdmin />
+            </Route>
+            <Route path={`${path}/myorders`}>
+              <MyOrders />
+            </Route>
+            <Route path={`${path}/manageorders`}>
+              <ManageAllOrder />
             </Route>
           </Switch>
         </div>
