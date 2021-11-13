@@ -19,7 +19,14 @@ export default function MakeAdmin() {
       body: JSON.stringify(user),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.modifiedCount === 1) {
+          alert("Admin Added succesfully");
+        } else {
+          alert("Admin Already Exist");
+        }
+      });
+    e.target.reset();
     e.preventDefault();
   };
   return (

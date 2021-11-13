@@ -10,6 +10,7 @@ import AuthProvider from "./context/AuthProvider/AuthProvider";
 import Footer from "./Components/Footer/Footer";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 import Explore from "./Components/Explore/Explore";
+import NotFound from "./Components/Notfound/NotFound";
 function App() {
   return (
     <div>
@@ -37,6 +38,9 @@ function App() {
             </PrivateRoute>
             <Route path="/register">
               <Register />
+            </Route>
+            <Route path="*">
+              <NotFound></NotFound>
             </Route>
           </Switch>
           <Footer />

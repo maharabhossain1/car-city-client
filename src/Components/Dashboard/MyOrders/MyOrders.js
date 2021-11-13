@@ -10,7 +10,7 @@ export default function MyOrders() {
     fetch(`https://powerful-meadow-94521.herokuapp.com/orders/${user.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
-  }, []);
+  }, [user.email]);
 
   const handleUserID = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");

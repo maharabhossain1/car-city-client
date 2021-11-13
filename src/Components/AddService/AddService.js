@@ -90,7 +90,7 @@ export default function AddService() {
             </FloatingLabel>
             <Form.Control
               type="submit"
-              value="Add a New Service"
+              value="Add a New Car"
               className="my-3 btn-custom-color text-light"
             />
           </Form>

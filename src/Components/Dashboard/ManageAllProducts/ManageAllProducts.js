@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Container, Row } from "react-bootstrap";
-import { TiTick } from "react-icons/ti";
 export default function ManageAllProducts() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
