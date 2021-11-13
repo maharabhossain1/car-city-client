@@ -6,19 +6,19 @@ import { FloatingLabel, Form } from "react-bootstrap";
 import useAuth from "../../../hooks/useAuth";
 
 export default function Review() {
-  const [value, setValue] = React.useState(2);
+  const [rateValue, setRateValue] = React.useState(2);
   const { user } = useAuth();
   const basicInfo = {
     name: user.displayName,
     email: user.email,
-    rating: value,
+    rating: rateValue,
   };
-  const [reviewData, setReviewData] = React.useState(basicInfo);
+  const [reviewData, setReviewData] = React.useState({});
 
   const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
-    const newInfo = { ...reviewData };
+    const newInfo = { ...basicInfo };
     newInfo[field] = value;
     setReviewData(newInfo);
   };
@@ -38,7 +38,6 @@ export default function Review() {
           alert("Dear User , Your Order added succesfully");
         }
         e.target.reset();
-        setReviewData(basicInfo);
       });
   };
   return (
@@ -59,10 +58,10 @@ export default function Review() {
           <Typography component="legend">Rating</Typography>
           <Rating
             name="simple-controlled"
-            value={value}
+            value={rateValue}
             size="large"
             onChange={(event, newValue) => {
-              setValue(newValue);
+              setRateValue(newValue);
             }}
           />
         </Box>
