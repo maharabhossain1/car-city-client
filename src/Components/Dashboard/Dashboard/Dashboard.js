@@ -13,6 +13,7 @@ import PrivateRoute from "../../Loging/PrivateRoute/PrivateRoute";
 import DashboardHome from "../DashaboardHome/DashboardHome";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageAllOrder from "../ManageAllOrder/ManageAllOrder";
+import ManageAllProducts from "../ManageAllProducts/ManageAllProducts";
 import MyOrders from "../MyOrders/MyOrders";
 import Payment from "../Payment/Payment";
 import Review from "../Review/Review";
@@ -61,6 +62,11 @@ export default function Dashboard() {
                   Add New Car
                 </Nav.Link>
               </Nav.Item>
+              <Nav.Item>
+                <Nav.Link className="" as={Link} to={`${url}/allproducts`}>
+                  Manage All Products
+                </Nav.Link>
+              </Nav.Item>
             </>
           )}
         </Nav>
@@ -86,6 +92,9 @@ export default function Dashboard() {
             </Route>
             <PrivateRoute path={`${path}/addcar`}>
               <AddService />
+            </PrivateRoute>
+            <PrivateRoute path={`${path}/allproducts`}>
+              <ManageAllProducts />
             </PrivateRoute>
           </Switch>
         </div>
