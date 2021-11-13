@@ -30,7 +30,7 @@ export default function AddService() {
 
   return (
     <>
-      <div className="add-service p-5">
+      <div className="add-service p-1">
         <div className="w-75 m-auto  my-5">
           <div className=" my-4 text-light custom-bg-dark p-2 ">
             <h1>Hello {user?.displayName} </h1>

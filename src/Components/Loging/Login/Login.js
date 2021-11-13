@@ -29,7 +29,7 @@ export default function Login() {
     logIn(logInData.email, logInData.password, location, history);
   };
   return (
-    <div className="w-50 m-auto my-5">
+    <div className="w-75 m-auto my-5">
       <h1>Welcome Back Please Login </h1>
       {!isloading && (
         <Form onSubmit={handleLogin}>
@@ -53,15 +53,14 @@ export default function Login() {
               onBlur={handleOnchange}
             />
           </FloatingLabel>
-          <Nav.Link className="mx-2" as={Link} to="/register">
-            New user please register
-          </Nav.Link>
-
           <Button className="my-3 btn-custom-color text-light" type="submit">
             Login
           </Button>
         </Form>
       )}
+      <Nav.Link className="text-center" as={Link} to="/register">
+        <u>New user ?please register</u>
+      </Nav.Link>
       {isloading && <Spinner animation="border" />}
 
       {user?.email && <Alert variant="success">User LogIN successfully</Alert>}

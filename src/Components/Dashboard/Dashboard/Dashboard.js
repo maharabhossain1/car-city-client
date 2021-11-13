@@ -18,46 +18,67 @@ export default function Dashboard() {
   return (
     <div>
       <div>
-        <Nav fill variant="tabs" defaultActiveKey={`${url}`}>
+        <Nav
+          className="bg-dark"
+          fill
+          variant="tabs"
+          defaultActiveKey={`${url}`}
+        >
           <Nav.Item>
-            <Nav.Link className="" as={Link} to={`${url}`}>
+            <Nav.Link className="text-light " as={Link} to={`${url}`}>
               Dashboard
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link className="" as={Link} to={`${url}/myorders`}>
+            <Nav.Link className="text-light " as={Link} to={`${url}/myorders`}>
               My Orders
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link className="" as={Link} to={`${url}/review`}>
+            <Nav.Link className="text-light " as={Link} to={`${url}/review`}>
               Reviews
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link className="" as={Link} to={`${url}/payment`}>
+            <Nav.Link className="text-light " as={Link} to={`${url}/payment`}>
               Payment
             </Nav.Link>
           </Nav.Item>
           {admin && (
             <>
               <Nav.Item>
-                <Nav.Link className="" as={Link} to={`${url}/makeadmin`}>
+                <Nav.Link
+                  className="text-light "
+                  as={Link}
+                  to={`${url}/makeadmin`}
+                >
                   Make Admin
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link className="" as={Link} to={`${url}/manageorders`}>
+                <Nav.Link
+                  className="text-light "
+                  as={Link}
+                  to={`${url}/manageorders`}
+                >
                   Manage Orders
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link className="" as={Link} to={`${url}/addcar`}>
+                <Nav.Link
+                  className="text-light "
+                  as={Link}
+                  to={`${url}/addcar`}
+                >
                   Add New Car
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link className="" as={Link} to={`${url}/allproducts`}>
+                <Nav.Link
+                  className="text-light "
+                  as={Link}
+                  to={`${url}/allproducts`}
+                >
                   Manage All Products
                 </Nav.Link>
               </Nav.Item>

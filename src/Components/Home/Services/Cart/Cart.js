@@ -5,14 +5,16 @@ import { Link } from "react-router-dom";
 export default function Cart({ shebaMini }) {
   const { img, title, detail, _id } = shebaMini;
   return (
-    <div className="my-2">
-      <Card className="m-auto" style={{ width: "26.5rem" }}>
+    <>
+      <Card className="my-1" style={{ width: "26.5rem" }}>
         <div>
           <Card.Img variant="top" src={img} className="img-fluid " />
         </div>
         <Card.Body>
           <Card.Title>{title}</Card.Title>
-          <Card.Text>{detail}</Card.Text>
+          <Card.Text>
+            <small>{detail}</small>
+          </Card.Text>
           <Link to={`/servicing/${_id}`}>
             <Button variant="primary" className="btn-custom-color">
               {" "}
@@ -21,6 +23,6 @@ export default function Cart({ shebaMini }) {
           </Link>
         </Card.Body>
       </Card>
-    </div>
+    </>
   );
 }

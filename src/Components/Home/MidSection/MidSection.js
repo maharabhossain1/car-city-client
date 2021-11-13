@@ -24,7 +24,7 @@ export default function MidSection() {
               </div>
               <div className="home-text">
                 <h1>The Mercedes-Benz AG at a glance.</h1>
-                <p>
+                <small>
                   Mercedes-Benz AG is responsible for the global business of
                   Mercedes-Benz Cars and Mercedes-Benz Vans, with over 170,000
                   employees worldwide. Ola Källenius is Chairman of the Board of
@@ -37,7 +37,7 @@ export default function MidSection() {
                   Mercedes-EQ, G-Class and the smart brand. The Mercedes me
                   brand offers access to the digital services from
                   Mercedes-Benz.
-                </p>
+                </small>
               </div>
             </div>
           </Col>

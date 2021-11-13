@@ -27,7 +27,7 @@ export default function Services() {
           ))}
         </Row>
       </Container>
-      <div className="w-25 m-auto">
+      <div className="w-75 m-auto text-center">
         <Link to={`/explorecars`}>
           <Button variant="primary" className="btn-custom-color">
             {" "}

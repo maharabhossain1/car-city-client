@@ -41,8 +41,8 @@ export default function Register() {
     );
   };
   return (
-    <div className="w-50 m-auto my-5">
-      <h1>Welcome To Car City ,Please Register</h1>
+    <div className="w-75 m-auto my-5">
+      <h1>Welcome To Car City, Please Register</h1>
       {isloading && <Spinner animation="border" />}
       {!isloading && (
         <Form onSubmit={handleLogin}>
@@ -89,15 +89,15 @@ export default function Register() {
               onBlur={handleOnBlur}
             />
           </FloatingLabel>
-          <Nav.Link className="mx-2" as={Link} to="/login">
-            Already have an account ? please go to log in
-          </Nav.Link>
 
           <Button className="my-3 btn-custom-color text-light" type="submit">
             Sign Up
           </Button>
         </Form>
       )}
+      <Nav.Link className="my-2 text-center" as={Link} to="/login">
+        Already have an account ? please go to log in
+      </Nav.Link>
       {user?.email && <Alert variant="success">User LogIN successfully</Alert>}
       {authError && <Alert variant="danger">{authError}</Alert>}
     </div>

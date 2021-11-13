@@ -14,7 +14,7 @@ export default function TopBanner() {
         {images.map((image) => {
           return (
             <Carousel.Item key={images.indexOf(image)}>
-              <div className="my-2">
+              <div className="mb-2">
                 <img className="w-100 d-block" src={image} alt="First slide" />
               </div>
             </Carousel.Item>
