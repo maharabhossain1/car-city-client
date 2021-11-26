@@ -5,7 +5,7 @@ This is A Car Selling Related page
 
 - This is A Car Shop full-stack Web APP.
 - This Page is Build With React.js ,Node.js ,Mongodb ,FirebaseAuth.
-- Is Has A Authentication Page(Firebase) where You Can LogIn .
-- WithOut LogIn Your Will not be Permited to visit some Of the page In this Wbe APP.
-- In This WebApp You will Found Review Setion where You can give A review.
+- Implemented User Authentication, Admin System, CURD Operation.
+- The Prerogative for Admin to add more cars, Delete cars, Manage Orders and make another Admin.
+- In This WebApp You will Found Review Section where You can give A review.
 - Also This App is Fully responsive.
